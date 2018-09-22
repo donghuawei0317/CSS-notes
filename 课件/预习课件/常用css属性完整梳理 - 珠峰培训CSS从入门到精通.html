@@ -1,0 +1,572 @@
+<!DOCTYPE html><html><head><title>珠峰培训CSS从入门到精通</title><meta charset='utf-8'><link href='https://dn-maxiang.qbox.me/res-min/themes/marxico.css' rel='stylesheet'><style></style></head><body><div id='preview-contents' class='note-content'>
+                        
+                    
+
+<div><div class="toc"><div class="toc">
+<ul>
+<li><ul>
+<li><a href="#珠峰培训css从入门到精通">珠峰培训CSS从入门到精通</a><ul>
+<li><a href="#常用的css属性的梳理">常用的CSS属性的梳理</a><ul>
+<li><a href="#1position">1.position</a></li>
+<li><a href="#2z-index">2.z-index</a></li>
+<li><a href="#3display">3.display</a></li>
+<li><a href="#4float">4.float</a></li>
+<li><a href="#5clear">5.clear</a></li>
+<li><a href="#6visibility">6.visibility</a></li>
+<li><a href="#7overflow">7.overflow</a></li>
+<li><a href="#8盒子模型类属性">8.盒子模型类属性</a></li>
+<li><a href="#9border-radius">9.border-radius</a></li>
+<li><a href="#10box-shadow">10.box-shadow</a></li>
+<li><a href="#11背景类-background">11.背景类 (background)</a></li>
+<li><a href="#12颜色类color">12.颜色类(color）</a></li>
+<li><a href="#13字体类-font">13.字体类 （font）</a></li>
+<li><a href="#14-文本类text">14. 文本类（text）</a></li>
+<li><a href="#15-文本装饰类text-decoration">15. 文本装饰类（Text-Decoration)</a></li>
+<li><a href="#16用户界面user-interface">16.用户界面(User Interface)</a></li>
+<li><a href="#17linear-gradient">17.linear-gradient</a></li>
+<li><a href="#18-动画类">18. 动画类</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+<h2 id="珠峰培训css从入门到精通">珠峰培训CSS从入门到精通</h2>
+
+<h3 id="常用的css属性的梳理">常用的CSS属性的梳理</h3>
+
+
+
+<h4 id="1position">1.position</h4>
+
+<blockquote>
+  <ul><li>position: static：对象遵循常规流。此时4个定位偏移属性不会被应用。</li>
+  <li>position: relative：对象遵循常规流，并且参照自身在常规流中的位置通过top/ right/ bottom / left这4个定位偏移属性进行偏移时不会影响常规流中的任何元素。</li>
+  <li>position: absolute：对象脱离常规流，此时偏移属性参照的是离自身最近的定位祖先元素，如果没有定位的祖先元素，则一直回溯到body元素。盒子的偏移位置不影响常规流中的任何元素，其margin不与其他任何margin折叠。</li>
+  <li>position: fixed：与absolute一致，但偏移定位是以窗口为参考。当出现滚动条时，对象不会随着滚动。</li>
+  </ul>
+</blockquote>
+
+<h4 id="2z-index">2.z-index</h4>
+
+<blockquote>
+  <ul><li>z-index: 检索或设置对象的层叠顺序；</li>
+  <li>z-index用于确定元素在当前层叠上下文中的层叠级别，并确定该元素是否创建新的局部层叠上下文。</li>
+  <li>每个元素层叠顺序由所属的层叠上下文和元素本身的层叠级别决定（每个元素仅属于一个层叠上下文）。</li>
+  <li>同一个层叠上下文中，层叠级别大的显示在上面，反之显示在下面。</li>
+  <li>同一个层叠上下文中，层叠级别相同的两个元素，依据它们在HTML文档流中的顺序，写在后面的将会覆盖前面的。</li>
+  <li>不同层叠上下文中，元素的显示顺序依据祖先的层叠级别来决定，与自身的层叠级别无关。</li>
+  <li>当z-index未定义或者值为auto时，在IE6,7下会创建新的局部层叠上下文，而在高级浏览器中，按照规范不产生新的局部层叠上下文</li>
+  </ul>
+</blockquote>
+
+
+
+<h4 id="3display">3.display</h4>
+
+<blockquote>
+  <p>设置或检索对象是否及如何显示。</p>
+  
+  <ul><li>如果display设置为none，float及position属性定义将不生效；</li>
+  <li>如果position既不是static也不是relative或者float不是none或者元素是根元素，当display:inline-table时，display的计算值为table；当display:inline | inline-block | run-in | table-* 系时，display的计算值为block，其它情况为指定值；</li>
+  <li>IE6,7支持inline元素转换成inline-block，但不支持block元素转换成inline-block，所以非inline元素在IE6,7下要转换成inline-block，需先转换成inline，然后触发hasLayout，以此来获得和inline-block类似的效果；你可以这样：</li>
+  </ul>
+</blockquote>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs scss"><div class="hljs-line"><span class="hljs-comment">// 全兼容的inline-block：</span>
+</div><div class="hljs-line"><span class="hljs-selector-tag">div</span> {
+</div><div class="hljs-line">    <span class="hljs-attribute">display</span>: inline-block;
+</div><div class="hljs-line">    *<span class="hljs-attribute">display</span>: inline;
+</div><div class="hljs-line">    *zoom: <span class="hljs-number">1</span>;
+</div><div class="hljs-line">}
+</div></code></pre>
+
+<blockquote>
+  <ul><li>none： 隐藏对象。与visibility属性的hidden值不同，其不为被隐藏的对象保留其物理空间</li>
+  <li>inline：指定对象为内联元素。</li>
+  <li>block：指定对象为块元素。</li>
+  <li>list-item：指定对象为列表项目。</li>
+  <li>inline-block：指定对象为内联块元素。（CSS2）</li>
+  <li>table：指定对象作为块元素级的表格。类同于html标签<code>&lt;table&gt;</code>（CSS2）</li>
+  <li>inline-table： 指定对象作为内联元素级的表格。类同于html标签<code>&lt;table&gt;</code>（CSS2）</li>
+  <li>table-caption：指定对象作为表格标题。类同于html标签<code>&lt;caption&gt;</code>（CSS2）</li>
+  <li>table-cell：指定对象作为表格单元格。类同于html标签<code>&lt;td&gt;</code>（CSS2）</li>
+  <li>table-row：指定对象作为表格行。类同于html标签<code>&lt;tr&gt;</code>（CSS2）</li>
+  <li>table-row-group：指定对象作为表格行组。类同于html标签<code>&lt;tbody&gt;</code>（CSS2）</li>
+  <li>table-column：指定对象作为表格列。类同于html标签<code>&lt;col&gt;</code>（CSS2）</li>
+  <li>table-column-group：指定对象作为表格列组显示。类同于html标签<code>&lt;colgroup&gt;</code>（CSS2）</li>
+  <li>table-header-group：指定对象作为表格标题组。类同于html标签<code>&lt;thead&gt;</code>（CSS2）</li>
+  <li>table-footer-group：指定对象作为表格脚注组。类同于html标签<code>&lt;tfoot&gt;</code>（CSS2）</li>
+  </ul>
+</blockquote>
+
+
+
+<h4 id="4float">4.float</h4>
+
+<blockquote>
+  <p>该属性的值指出了对象是否及如何浮动</p>
+  
+  <ul><li>none： 设置对象不浮动</li>
+  <li>left： 设置对象浮在左边</li>
+  <li>right： 设置对象浮在右边</li>
+  </ul>
+</blockquote>
+
+
+
+<h4 id="5clear">5.clear</h4>
+
+<blockquote>
+  <p>该属性的值指出了不允许有浮动对象的边</p>
+  
+  <ul><li>none： 允许两边都可以有浮动对象</li>
+  <li>both： 不允许有浮动对象</li>
+  <li>left： 不允许左边有浮动对象</li>
+  <li>right：不允许右边有浮动对象</li>
+  </ul>
+</blockquote>
+
+<h4 id="6visibility">6.visibility</h4>
+
+<blockquote>
+  <p>设置或检索是否显示对象。与display属性不同，此属性为隐藏的对象保留其占据的物理空间; <br>
+  如果希望对象为可视，其父对象也必须是可视的。</p>
+  
+  <ul><li>visibility: visible：设置对象可视</li>
+  <li>visibility: hidden：设置对象隐藏</li>
+  </ul>
+</blockquote>
+
+<h4 id="7overflow">7.overflow</h4>
+
+<blockquote>
+  <p>复合属性。检索或设置对象处理溢出内容的方式; <br>
+  overflow的效果等同于overflow-x + overflow-y;</p>
+  
+  <ul><li>overflow：检索或设置对象处理纵向和横向溢出内容的方式</li>
+  <li>overflow -x : 检索或设置对象处理横溢向出内容的方式</li>
+  <li>overflow -y :  检索或设置对象处理纵向溢出内容的方式</li>
+  <li>visible：对溢出内容不做处理，内容可能会超出容器。</li>
+  <li>hidden：隐藏溢出容器的内容且不出现滚动条。</li>
+  <li>scroll：隐藏溢出容器的内容，溢出的内容将以卷动滚动条的方式呈现。</li>
+  <li>auto：当内容没有溢出容器时不出现滚动条，当内容溢出容器时出现滚动条，按需出现滚动条。此为body对象和textarea的默认值。</li>
+  </ul>
+</blockquote>
+
+<h4 id="8盒子模型类属性">8.盒子模型类属性</h4>
+
+<blockquote>
+  <p>width: 宽度 <br>
+  min-width  最小宽度 <br>
+  max-width  最大宽度 <br>
+  min-height 最小高度 <br>
+  max-height 最大高度 <br>
+  padding / padding-top/bottom/left/right  内补白 /  内边距 <br>
+  border-width ：边框线的宽度 <br>
+  border-style ：边框线的类型 solid 实线  dashed 虚线 dotted 点状线 <br>
+  border-color： 边框线的颜色 <br>
+  margin/ margin-top/bottom/left/right    外边距</p>
+</blockquote>
+
+
+
+<h4 id="9border-radius">9.border-radius</h4>
+
+<blockquote>
+  <p>设置或检索对象使用圆角边框</p>
+  
+  <ul><li>第1个参数表示水平半径，第2个参数表示垂直半径，如第2个参数省略，则默认等于第1个参数</li>
+  <li>水平半径：</li>
+  <li>如果提供全部四个参数值，将按<code>上左(top-left)、上右(top-right)、下右(bottom-right)、下左(bottom-left)</code>的顺序作用于四个角</li>
+  <li>如果只提供一个，将用于全部的于<code>四个角</code></li>
+  <li>如果提供两个，第一个用于<code>上左(top-left)、下右(bottom-right)，第二个用于上右(top-right)、下左(bottom-left)</code></li>
+  <li>如果提供三个，第一个用于<code>上左(top-left)</code>，第二个用于<code>上右(top-right)、下左(bottom-left)</code>，第三个用于<code>下右(bottom-right)</code></li>
+  <li>垂直半径也遵循以上4点</li>
+  <li>border-radius: 50%  圆形形状</li>
+  </ul>
+</blockquote>
+
+
+
+<h4 id="10box-shadow">10.box-shadow</h4>
+
+<blockquote>
+  <p>设置或检索对象阴影</p>
+  
+  <ul><li>none： 无阴影</li>
+  <li><code>&lt;length&gt;</code>①： 第1个长度值用来设置对象的阴影水平偏移值。可以为负值</li>
+  <li><code>&lt;length&gt;</code>②： 第2个长度值用来设置对象的阴影垂直偏移值。可以为负值</li>
+  <li><code>&lt;length&gt;</code>③： 如果提供了第3个长度值则用来设置对象的阴影模糊值。不允许负值</li>
+  <li><code>&lt;length&gt;</code>④： 如果提供了第4个长度值则用来设置对象的阴影外延值。可以为负值</li>
+  <li><code>&lt;color&gt;</code>： 设置对象的阴影的颜色。</li>
+  <li>inset： 设置对象的阴影类型为内阴影。该值为空时，则对象的阴影类型为外阴影</li>
+  </ul>
+</blockquote>
+
+
+
+<h4 id="11背景类-background">11.背景类 (background)</h4>
+
+<blockquote>
+  <ul><li>background-image： 指定对象的背景图像。可以是真实图片路径或使用渐变创建的“背景图像”</li>
+  <li>background-position： 指定对象的背景图像位置。</li>
+  <li>background-size： 指定对象的背景图像的尺寸大小。</li>
+  <li>background-repeat： 指定对象的背景图像如何铺排填充。</li>
+  <li>background-attachment： 指定对象的背景图像是随对象内容滚动还是固定的。</li>
+  <li>background-origin： 指定对象的背景图像显示的原点。</li>
+  <li>background-clip： 指定对象的背景图像向外裁剪的区域。</li>
+  <li>background-color ： 指定对象的背景颜色。</li>
+  </ul>
+</blockquote>
+
+<h4 id="12颜色类color">12.颜色类(color）</h4>
+
+<blockquote>
+  <ul><li>color 检索或设置对象的文本颜色, 白色 white / #fff  黑色 black / #000</li>
+  <li>opacity 检索或设置对象的不透明度; 使用浮点数指定对象的不透明度。值被约束在[0.0-1.0]范围内，如果超过了这个范围，其计算结果将截取到与之最相近的值; </li>
+  </ul>
+</blockquote>
+
+<pre class="prettyprint hljs-dark"><code class="hljs scss"><div class="hljs-line"><span class="hljs-comment">// 对于尚不支持opacity属性的IE浏览器可以使用IE私有的滤镜属性来实现与opacity相同的效果</span>
+</div><div class="hljs-line">示例代码：
+</div><div class="hljs-line"><span class="hljs-selector-tag">div</span>{<span class="hljs-attribute">filter</span>:alpha(opacity=<span class="hljs-number">50</span>);} <span class="hljs-comment">/* for IE8 and earlier */</span>
+</div><div class="hljs-line"><span class="hljs-selector-tag">div</span>{<span class="hljs-attribute">opacity</span>:.<span class="hljs-number">5</span>;} <span class="hljs-comment">/* for IE9 and other browsers */</span>
+</div></code></pre>
+
+<h4 id="13字体类-font">13.字体类 （font）</h4>
+
+<blockquote>
+  <p>font 设置或检索对象中的文本特性。该属性是复合属性。</p>
+  
+  <ul><li>font：[ [ &lt;’ font-style ‘&gt; || &lt;’ font-variant ‘&gt; || &lt;’ font-weight ‘&gt; ]? &lt;’ font-size ‘&gt; [ / &lt;’ line-height ‘&gt; ]? &lt;’ font-family ‘&gt; ]</li>
+  </ul>
+  
+  <p><strong><code>font-style ： 指定文本字体样式</code></strong></p>
+  
+  <ul><li>normal：指定文本字体样式为正常的字体 <br>
+  <ul>
+  <li>italic： 指定文本字体样式为斜体。对于没有设计斜体的特殊字体，如果要使用斜体外观将应用oblique</li>
+  <li>oblique： 指定文本字体样式为倾斜的字体。人为的使文字倾斜，而不是去选取字体中的斜体字</li></ul></li>
+  </ul>
+  
+  <p><strong><code>font-variant：指定文本是否为小型的大写字母</code></strong></p>
+  
+  <ul><li>normal： 正常的字体</li>
+  <li>small-caps：小型的大写字母字体</li>
+  </ul>
+  
+  <p><strong><code>font-weight：指定文本字体的粗细</code></strong></p>
+  
+  <ul><li>normal： 正常的字体。相当于数字值400</li>
+  <li>bold： 粗体。相当于数字值700。</li>
+  <li>bolder： 定义比继承值更重的值</li>
+  <li>lighter： 定义比继承值更轻的值</li>
+  <li>integer： 用数字表示文本字体粗细。取值范围：100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900</li>
+  </ul>
+  
+  <p><strong><code>font-size： 指定文本字体尺寸</code></strong></p>
+  
+  <p><strong><code>line-height： 指定文本字体的行高,即字体最底端与字体内部顶端之间的距离</code></strong></p>
+  
+  <ul><li>normal： 允许内容顶开或溢出指定的容器边界。</li>
+  <li>length： 用长度值指定行高。不允许负值。</li>
+  <li>percentage： 用百分比指定行高，其百分比取值是基于字体的高度尺寸。不允许负值。</li>
+  <li>number： 用乘积因子指定行高。不允许负值。</li>
+  </ul>
+  
+  <p><strong><code>font-family ： 指定文本使用某个字体或字体序列</code></strong></p>
+  
+  <ul><li>family-name = arial | georgia | verdana | helvetica | simsun and etc（字体名称。按优先顺序排列。以逗号隔开。如果字体名称包含空格或中文，则应使用引号括起）</li>
+  <li>generic-family  = cursive | fantasy | monospace | serif | sans-serif(字体序列名称)</li>
+  <li>body { font-family: helvetica, verdana, sans-serif; }</li>
+  </ul>
+</blockquote>
+
+<h4 id="14-文本类text">14. 文本类（text）</h4>
+
+<blockquote>
+  <p>text-transform 检索或设置对象中的文本的大小写</p>
+  
+  <ul><li>none： 无转换</li>
+  <li>capitalize： 将每个单词的第一个字母转换成大写</li>
+  <li>uppercase： 将每个单词转换成大写</li>
+  <li>lowercase： 将每个单词转换成小写</li>
+  </ul>
+  
+  <p>white-space设置或检索对象内空格的处理方式</p>
+  
+  <ul><li>normal： 默认处理方式。</li>
+  <li>pre： 用等宽字体显示预先格式化的文本，不合并文字间的空白距离，当文字超出边界时不换行。可查阅pre对象</li>
+  <li>nowrap： 强制在同一行内显示所有文本，合并文本间的多余空白，直到文本结束或者遭遇br对象。</li>
+  <li>pre-wrap： 用等宽字体显示预先格式化的文本，不合并文字间的空白距离，当文字碰到边界时发生换行。</li>
+  <li>pre-line： 保持文本的换行，不保留文字间的空白距离，当文字碰到边界时发生换行。</li>
+  </ul>
+  
+  <p>word-break 设置或检索对象内文本的字内换行行为</p>
+  
+  <ul><li>normal： 依照亚洲语言和非亚洲语言的文本规则，允许在字内换行。</li>
+  <li>keep-all： 与所有非亚洲语言的normal相同。对于中文，韩文，日文，不允许字断开。适合包含少量亚洲文本的非亚洲文本。</li>
+  <li>break-all： 该行为与亚洲语言的normal相同。也允许非亚洲语言文本行的任意字内断开。该值适合包含一些非亚洲文本的亚洲文本，比如使连续的英文字母间断行。 <br>
+  <code>对于解决防止页面中出现连续无意义的长字符打破布局，应该使用break-all属性值；</code></li>
+  </ul>
+  
+  <p>word-wrap 设置或检索当内容超过指定容器的边界时是否断行</p>
+  
+  <ul><li>normal： 允许内容顶开或溢出指定的容器边界。</li>
+  <li>break-word： 内容将在边界内换行。如果需要，单词内部允许断行。</li>
+  </ul>
+  
+  <p>overflow-wrap 设置或检索当内容超过指定容器的边界时是否断行</p>
+  
+  <ul><li>normal： 允许内容顶开或溢出指定的容器边界。</li>
+  <li>break-word： 内容将在边界内换行。如果需要，单词内部允许断行。 <br>
+  <code>CSS3中将 &lt;' word-wrap '&gt; 改名为 &lt;' overflow-wrap '&gt;</code></li>
+  </ul>
+  
+  <p>text-align 设置或检索对象中内容的水平对齐方式</p>
+  
+  <ul><li>left： 内容左对齐。</li>
+  <li>center： 内容居中对齐。</li>
+  <li>right： 内容右对齐</li>
+  </ul>
+  
+  <p>word-spacing 检索或设置对象中的单词之间的最小，最大和最佳间隙</p>
+  
+  <ul><li>normal： 默认间隔</li>
+  <li>length： 用长度值指定间隔。可以为负值。</li>
+  <li>percentage： 用百分比指定间隔。可以为负值。（CSS3）</li>
+  </ul>
+  
+  <p>letter-spacing 检索或设置对象中的字符之间的最小，最大和最佳间隙</p>
+  
+  <ul><li>normal： 默认间隔</li>
+  <li><code>&lt;length&gt;</code>： 用长度值指定间隔。可以为负值。</li>
+  <li><code>&lt;percentage&gt;</code>： 用百分比指定间隔。可以为负值。（CSS3）</li>
+  </ul>
+  
+  <p>text-indent 检索或设置对象中的文本的缩进</p>
+  
+  <ul><li><code>&lt;length&gt;</code>： 用长度值指定文本的缩进。可以为负值。</li>
+  <li><code>&lt;percentage&gt;</code>： 用百分比指定文本的缩进。可以为负值。</li>
+  </ul>
+  
+  <p>vertical-align 设置或检索内联元素在行框内的垂直对其方式</p>
+  
+  <ul><li>baseline： 将支持valign特性的对象的内容与基线对齐</li>
+  <li>sub： 垂直对齐文本的下标</li>
+  <li>super： 垂直对齐文本的上标</li>
+  <li>top： 将支持valign特性的对象的内容与对象顶端对齐</li>
+  <li>text-top： 将支持valign特性的对象的文本与对象顶端对齐</li>
+  <li>middle： 将支持valign特性的对象的内容与对象中部对齐</li>
+  <li>bottom： 将支持valign特性的对象的文本与对象底端对齐</li>
+  <li>text-bottom： 将支持valign特性的对象的文本与对象顶端对齐</li>
+  <li>percentage： 用百分比指定由基线算起的偏移量。可以为负值。基线对于百分数来说就是0%。</li>
+  <li>length： 用长度值指定由基线算起的偏移量。可以为负值。基线对于数值来说为0。（CSS2）</li>
+  </ul>
+  
+  <p>line-height 检索或设置对象的行高。即字体最底端与字体内部顶端之间的距离</p>
+  
+  <ul><li>normal： 允许内容顶开或溢出指定的容器边界。</li>
+  <li><code>&lt;length&gt;</code>： 用长度值指定行高。不允许负值。</li>
+  <li><code>&lt;percentage&gt;</code>： 用百分比指定行高，其百分比取值是基于字体的高度尺寸。不允许负值。</li>
+  <li><code>&lt;number&gt;</code>： 用乘积因子指定行高。不允许负值。     </li>
+  </ul>
+</blockquote>
+
+
+
+<h4 id="15-文本装饰类text-decoration">15. 文本装饰类（Text-Decoration)</h4>
+
+<blockquote>
+  <p>text-decoration 复合属性。检索或设置对象中的文本的装饰.</p>
+  
+  <ul><li>text-decoration ：none  去掉小划线</li>
+  <li>text-decoration：underline 增加下划线</li>
+  </ul>
+  
+  <p>text-shadow 设置或检索对象中文本的文字是否有阴影及模糊效果 <br>
+  可以设定多组效果，每组参数值以逗号分隔。多组阴影特殊效果</p>
+  
+  <ul><li>none： 无阴影</li>
+  <li><code>&lt;length&gt;</code>①： 第1个长度值用来设置对象的阴影水平偏移值。可以为负值</li>
+  <li><code>&lt;length&gt;</code>②： 第2个长度值用来设置对象的阴影垂直偏移值。可以为负值</li>
+  <li><code>&lt;length&gt;</code>③： 如果提供了第3个长度值则用来设置对象的阴影模糊值。不允许负值</li>
+  <li><code>&lt;color&gt;</code>： 设置对象的阴影的颜色。</li>
+  </ul>
+</blockquote>
+
+
+
+<h4 id="16用户界面user-interface">16.用户界面(User Interface)</h4>
+
+<blockquote>
+  <p>text-overflow 文本隐藏的方式</p>
+  
+  <ul><li>clip： 当内联内容溢出块容器时，将溢出部分裁切掉。</li>
+  <li>ellipsis： 当内联内容溢出块容器时，将溢出部分替换为（…）</li>
+  <li>出现省略号必备的四个条件: <br>
+  <ul>
+  <li>overflow:hidden;   溢出隐藏</li>
+  <li>width:;    宽度</li>
+  <li>white-space:nowrap;</li>
+  <li>text-overflow:ellipsis;</li></ul></li>
+  </ul>
+  
+  <p>cursor 鼠标形状</p>
+  
+  <ul><li>cursor ：pointer 鼠标形状为小手形状</li>
+  <li>default： 相关平台的默认光标形状，通常为箭头</li>
+  </ul>
+  
+  <p>box-sizing 设置或检索对象的盒模型组成模式。</p>
+  
+  <ul><li>content-box： padding和border不被包含在定义的width和height之内。对象的实际宽度等于设置的width值和border、padding之和，即 ( Element width = width + border + padding ) <br>
+  <code>此属性表现为标准模式下的盒模型。</code></li>
+  <li>border-box： padding和border被包含在定义的width和height之内。对象的实际宽度就等于设置的width值，即使定义有border和padding也不会改变对象的实际宽度，即 ( Element width = width ) <br>
+  <code>此属性表现为怪异模式下的盒模型。</code></li>
+  </ul>
+</blockquote>
+
+<h4 id="17linear-gradient">17.linear-gradient</h4>
+
+<blockquote>
+  <p>作用： 用线性渐变创建图像 <br>
+  如果想创建以对角线方式渐变的图像，可以使用 to top left 这样的多关键字方式来实现。 <br>
+  用默认的渐变方向绘制一个最简单的线性渐变</p>
+</blockquote>
+
+<p><strong>下述值用来表示渐变的方向，可以使用角度或者关键字来设置</strong></p>
+
+<blockquote>
+  <p><code>&lt;angle&gt;</code>： 用角度值指定渐变的方向（或角度）。 <br>
+  to left： 设置渐变为从右到左。相当于: 270deg <br>
+  to right： 设置渐变从左到右。相当于: 90deg <br>
+  to top： 设置渐变从下到上。相当于: 0deg <br>
+  to bottom： 设置渐变从上到下。相当于: 180deg。这是默认值，等同于留空不写。 <br>
+  <code>&lt;color-stop&gt;</code> 用于指定渐变的起止颜色： <br>
+  <code>&lt;color&gt;</code>： 指定颜色。 <br>
+  <code>&lt;length&gt;</code>： 用长度值指定起止色位置。不允许负值 <br>
+  <code>&lt;percentage&gt;</code>： 用百分比指定起止色位置。</p>
+</blockquote>
+
+<pre class="prettyprint hljs-dark"><code class="hljs xml"><div class="hljs-line"><span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css">
+</span></div><div class="hljs-line"><span class="hljs-selector-tag">div</span> {
+</div><div class="hljs-line">    <span class="hljs-attribute">width</span>: <span class="hljs-number">200px</span>;
+</div><div class="hljs-line">    <span class="hljs-attribute">height</span>: <span class="hljs-number">100px</span>;
+</div><div class="hljs-line">    <span class="hljs-attribute">margin-top</span>: <span class="hljs-number">10px</span>;
+</div><div class="hljs-line">    <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid <span class="hljs-number">#ddd</span>;
+</div><div class="hljs-line">}
+</div><div class="hljs-line"><span class="hljs-selector-class">.test</span> {
+</div><div class="hljs-line">    <span class="hljs-attribute">background</span>: <span class="hljs-built_in">linear-gradient</span>(#fff, #333);
+</div><div class="hljs-line">}
+</div><div class="hljs-line"><span class="hljs-selector-class">.test2</span> {
+</div><div class="hljs-line">    <span class="hljs-attribute">background</span>: <span class="hljs-built_in">linear-gradient</span>(#000, #f00 50%, #090);
+</div><div class="hljs-line">}
+</div><div class="hljs-line"><span class="hljs-selector-class">.test3</span> {
+</div><div class="hljs-line">    <span class="hljs-attribute">background</span>: <span class="hljs-built_in">linear-gradient</span>(0deg, #000 20%, #f00 50%, #090 80%);
+</div><div class="hljs-line">}
+</div><div class="hljs-line"><span class="hljs-selector-class">.test4</span> {
+</div><div class="hljs-line">    <span class="hljs-attribute">background</span>: <span class="hljs-built_in">linear-gradient</span>(45deg, #000, #f00 50%, #090);
+</div><div class="hljs-line">}
+</div><div class="hljs-line"><span class="hljs-selector-class">.test5</span> {
+</div><div class="hljs-line">    <span class="hljs-attribute">background</span>: <span class="hljs-built_in">linear-gradient</span>(to top right, #000, #f00 50%, #090);
+</div><div class="hljs-line">}
+</div><div class="hljs-line"><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+</div><div class="hljs-line"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"test"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</div><div class="hljs-line"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"test2"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</div><div class="hljs-line"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"test3"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</div><div class="hljs-line"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"test4"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</div><div class="hljs-line"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"test5"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</div></code></pre>
+
+
+
+<h4 id="18-动画类">18. 动画类</h4>
+
+<blockquote>
+  <p><strong>transform 设置或检索对象的转换</strong> </p>
+  
+  <ul><li>translate()： 指定对象的2D translation（2D平移）。第一个参数对应X轴，第二个参数对应Y轴。如果第二个参数未提供，则默认值为0</li>
+  <li>translatex()： 指定对象X轴（水平方向）的平移</li>
+  <li>translatey()： 指定对象Y轴（垂直方向）的平移</li>
+  <li>translatez()： 指定对象Z轴的平移</li>
+  <li>translate3d()： 指定对象的3D位移。第1个参数对应X轴，第2个参数对应Y轴，第3个参数对应Z轴，参数不允许省略</li>
+  <li>rotate()： 指定对象的2D rotation（2D旋转），需先有 &lt;’ transform-origin ‘&gt; 属性的定义</li>
+  <li>rotatex()： 指定对象在x轴上的旋转角度</li>
+  <li>rotatey()： 指定对象在y轴上的旋转角度</li>
+  <li>rotatez()： 指定对象在z轴上的旋转角度</li>
+  <li>rotate3d()： 指定对象的3D旋转角度，其中前3个参数分别表示旋转的方向x,y,z，第4个参数表示旋转的角度，参数不允许省略</li>
+  <li>scale()： 指定对象的2D scale（2D缩放）。第一个参数对应X轴，第二个参数对应Y轴。如果第二个参数未提供，则默认取第一个参数的值</li>
+  <li>scalex()： 指定对象X轴的（水平方向）缩放</li>
+  <li>scaley()： 指定对象Y轴的（垂直方向）缩放</li>
+  <li>scalez()： 指定对象的z轴缩放 </li>
+  <li>scale3d()： 指定对象的3D缩放。第1个参数对应X轴，第2个参数对应Y轴，第3个参数对应Z轴，参数不允许省略</li>
+  </ul>
+  
+  <p><strong>transform-origin  设置或检索对象以某个原点进行转换 </strong></p>
+  
+  <ul><li><code>&lt;percentage&gt;</code>： 用百分比指定坐标值。可以为负值。</li>
+  <li><code>&lt;length&gt;</code>： 用长度值指定坐标值。可以为负值。</li>
+  <li>left： 指定原点的横坐标为left</li>
+  <li>center①： 指定原点的横坐标为center</li>
+  <li>right： 指定原点的横坐标为right</li>
+  <li>top： 指定原点的纵坐标为top</li>
+  <li>center②： 指定原点的纵坐标为center</li>
+  <li>bottom： 指定原点的纵坐标为bottom <br>
+  <code>该属性提供2个参数值。 如果提供两个，第一个用于横坐标，第二个用于纵坐标。 如果只提供一个，该值将用于横坐标；纵坐标将默认为50%。</code></li>
+  </ul>
+  
+  <p><strong>transition 复合属性。检索或设置对象变换时的过渡。 </strong></p>
+  
+  <ul><li>transition-property ： 检索或设置对象中的参与过渡的属性</li>
+  <li>transition-duration： 检索或设置对象过渡的持续时间</li>
+  <li>transition-timing-function： 检索或设置对象中过渡的动画类型 </li>
+  <li>transition-delay： 检索或设置对象延迟过渡的时间</li>
+  </ul>
+  
+  <p><strong>animation 复合属性。检索或设置对象所应用的动画特效 </strong> </p>
+  
+  <ul><li>animation-name： 检索或设置对象所应用的动画名称</li>
+  <li>animation-duration： 检索或设置对象动画的持续时间</li>
+  <li>animation-timing-function： 检索或设置对象动画的过渡类型 <br>
+  <ul>
+  <li>linear： 线性过渡。等同于贝塞尔曲线(0.0, 0.0, 1.0, 1.0)</li>
+  <li>ease： 平滑过渡。等同于贝塞尔曲线(0.25, 0.1, 0.25, 1.0)</li>
+  <li>ease-in： 由慢到快。等同于贝塞尔曲线(0.42, 0, 1.0, 1.0)</li>
+  <li>ease-out： 由快到慢。等同于贝塞尔曲线(0, 0, 0.58, 1.0)</li>
+  <li>ease-in-out： 由慢到快再到慢。等同于贝塞尔曲线(0.42, 0, 0.58, 1.0)</li>
+  <li>step-start： 等同于 steps(1, start)</li>
+  <li>step-end： 等同于 steps(1, end)</li>
+  <li>steps(<code>&lt;integer&gt;</code>[, [ start | end ] ]?)： 接受两个参数的步进函数。第一个参数必须为正整数，指定函数的步数。第二个参数取值可以是start或end，指定每一步的值发生变化的时间点。第二个参数是可选的，默认值为end。</li>
+  <li>cubic-bezier(<code>&lt;number&gt;, &lt;number&gt;, &lt;number&gt;, &lt;number&gt;</code>)： 特定的贝塞尔曲线类型，4个数值需在[0, 1]区间内</li></ul></li>
+  <li>animation-delay： 检索或设置对象动画延迟的时间</li>
+  <li>animation-iteration-count： 检索或设置对象动画的循环次数 <br>
+  <ul>
+  <li>infinite： 无限循环</li>
+  <li><code>&lt;number&gt;</code>： 指定对象动画的具体循环次数</li></ul></li>
+  <li>animation-direction： 检索或设置对象动画在循环中是否反向运动 <br>
+  <ul>
+  <li>normal： 正常方向</li>
+  <li>reverse： 反方向运行</li>
+  <li>alternate： 动画先正常运行再反方向运行，并持续交替运行</li>
+  <li>alternate-reverse： 动画先反运行再正方向运行，并持续交替运行</li></ul></li>
+  <li>animation-play-state： 检索或设置对象动画的状态。w3c正考虑是否将该属性移除，因为动画的状态可以通过其它的方式实现，比如重设样式 <br>
+  <ul>
+  <li>running： 运动</li>
+  <li>paused： 暂停</li></ul></li>
+  <li>animation-fill-mode ： 检索或设置对象动画时间之外的状态 <br>
+  <ul>
+  <li>none： 默认值。不设置对象动画之外的状态</li>
+  <li>forwards： 设置对象状态为动画结束时的状态</li>
+  <li>backwards： 设置对象状态为动画开始时的状态</li>
+  <li>both： 设置对象状态为动画结束或开始的状态</li></ul></li>
+  </ul>
+</blockquote></div></body></html>
