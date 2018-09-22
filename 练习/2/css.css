@@ -1,0 +1,80 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.xiyou01{
+    width: 200px;
+    height: 180px;
+    background: url("images/xiyou01.png") no-repeat 0 0;
+    background-size: cover;
+    animation: xiyou01 1s steps(8) infinite;
+    position: absolute;
+    top:25%;
+    left: 25%;
+    z-index: 20;
+}
+@keyframes xiyou01 {
+    0%{background-position: 0 0}
+    100%{background-position: -1600px 0}
+}
+.xiyou02{
+    width: 200px;
+    height: 180px;
+    background: url("images/xiyou02.png") no-repeat 0 0;
+    animation: xiyou02 1s steps(8) infinite;
+    position: absolute;
+    top:25%;
+    left: 0;
+    z-index: 20;
+    transition: top 2s;
+}
+@keyframes xiyou02 {
+    0%{background-position: 0 0}
+    100%{background-position: -1600px 0}
+}
+/*
+.xiyou03{
+    background: url("images/xiyou03.png") no-repeat 0 0;
+}
+@keyframes xiyou03 {
+    0%{background-position: 0 0}
+    100%{background-position: -1600px 0}
+}
+.xiyou04{
+    background: url("images/xiyou04.png") no-repeat 0 0;
+}
+@keyframes xiyou04 {
+    0%{background-position: 0 0}
+    100%{background-position: -1600px 0}
+}*/
+.xiyou05{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.xiyou05 ul{
+    margin-left: -2000px;
+    width: 3796px;
+    height: 100%;
+    list-style: none;
+    position: relative;
+    animation: xiyou05 10s linear infinite;
+}
+.xiyou05 ul li{
+
+    width: 3796px;
+    height: 100%;
+    background: url("images/xiyou05.png") no-repeat ;
+    position: absolute;
+
+}
+@keyframes xiyou05 {
+    0%{left:0}
+    100%{
+        left: 1796px;}
+}
