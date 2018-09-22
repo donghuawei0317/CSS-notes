@@ -1,0 +1,24 @@
+/* 定位 3种写法*/
+.black{position:relative;width: 500px;height: 500px;background-color: black}
+.red{position:absolute;top:50%;left:50%;width: 200px;height: 200px;margin:-100px 0 0 -100px;background-color: red}
+
+
+/*.black{position:relative;width: 500px;height: 500px;background-color: black}
+.red{position:absolute;top:50%;left:50%;width: 200px;height: 200px;transform:translate(-50%,-50%);background-color: red}*/
+
+
+/*.black{position:relative;width: 500px;height: 500px;background-color: black}
+.red{position:absolute;top:0;bottom:0;left:0;right:0;margin:auto;width: 200px;height: 200px;background-color: red}*/
+
+/* display:table-cell +  vertical-align*/
+/*
+.black{display:table-cell;width: 500px;height: 500px;background-color: black;text-align: center;vertical-align: middle}
+.red{display:inline-block;width: 200px;height: 200px;background-color: red}*/
+
+/* margin值的使用*/
+/*.black{width: 500px;height: 500px;background-color: black;overflow: hidden}
+.red{width: 200px;height: 200px;margin:150px auto;background-color: red}*/
+
+/* display: flex 弹性盒模型 */
+/*.black{display:flex;justify-content:center;align-items:center;width: 500px;height: 500px;background-color: black;}
+.red{width: 200px;height: 200px;background-color: red}*/
