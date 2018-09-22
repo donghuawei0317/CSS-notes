@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description"/>
+    <title></title>
+    <link rel="icon" href="">
+    <style type="text/css">
+        .main{
+            border: 10px solid red;
+        }
+        .clearfix:after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+        .left{
+            float: left;
+            width: 100px;
+            height: 100px;
+            background-color: #007aff;
+        }
+        .right{
+            float: left;
+            width: 100px;
+            height: 100px;
+            background-color:#c8dcf2;
+        }
+      /*  .clear{
+            clear: both;
+        }*/
+    </style>
+</head>
+<body>
+<div class="main clearfix">
+    <div class="left">左</div>
+    <div class="right">右</div>
+    <!--<div class="clear"></div>-->
+</div>
+
+
+<!--
+浮动：后面的元素的排列情况
+1、文字内容：会围绕着浮动
+2、色块元素：会在浮动元素的下面排列
+浮动导致高度塌陷的问题/清浮动有几种方法
+1、手动给浮动元素的父元素加一个高度
+2、给浮动元素的父元素添加overflow:hidden/auto
+3、给浮动元素的父元素的结束标签之前添加空元素：块级元素（div），clear：both
+-->
+</body>
+</html>

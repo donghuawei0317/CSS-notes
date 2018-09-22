@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description"/>
+    <title>position</title>
+    <link rel="icon" href="">
+</head>
+<body>
+position取值：
+1、position:fixed 固定定位
+   脱离文档流，不占位
+   参照物：当前浏览器窗口
+   可以设置方位（top/right/bottom/left）
+   不设置宽高室外，宽高值根据内容取
+2、position:absolute 绝对定位
+   会脱离文档流，不占位
+   参照物：上一级具有定位特征(固定、绝对、相对定位)的父级元素
+           如果上一级没有加定位的元素，会逐层往上查找，直到最外层HTML元素为止，就会以浏览器窗口为参照
+3、position:relative 相对定位
+   不脱离文档流，会保留原来的位置
+   参照物：自己本身原来的位置
+   1）一般用来做参照物
+   2）配合top/right/bottom/left使用
+</body>
+</html>
