@@ -1,0 +1,51 @@
+/*1.绝对定位*/
+/*
+
+.main{position: relative}
+.left{position: absolute;top:0;left:0;width:200px;height: 500px;background-color: #007aff}
+.center{margin:0 210px;height: 500px;background-color: darkgoldenrod}
+.right{position: absolute;top:0;right:0;width:200px;height: 500px;background-color: #007aff}
+
+*/
+
+/*2.flex 弹性盒子模型 规定子元素的排列布局方式*/
+/*
+.main{display: flex}
+.center{flex: 1;margin:0 10px;height:500px;background-color:darkgoldenrod}  !* 100% - 200 - 200 = ? 自动分配剩下的大小*!
+.left{width:200px;height: 500px;background-color: #007aff}
+.right{width:200px;height: 500px;background-color: #007aff}
+*/
+
+/* 3.浮动  float + calc + margin*/
+/*.left{float:left;width:200px;height: 500px;background-color: #007aff}
+.center{float:left;width:calc(100% - 420px);margin:0 10px;height:500px;background-color:darkgoldenrod}
+.right{float:left;width:200px;height: 500px;background-color: #007aff}*/
+
+
+
+/* 浮动  float + margin + padding / box-sizing*/
+/*.left{position:relative;float:left;width:200px;height: 500px;background-color: #007aff;border-right:10px solid #fff;box-sizing: border-box}
+.center{float:left;width:100%;margin:0 -200px;height:500px;background-color:darkgoldenrod;padding:0 210px;box-sizing: border-box}
+.right{float:left;width:200px;height: 500px;background-color: #007aff;border-left:10px solid #fff;box-sizing: border-box}*/
+
+/* 浮动 float + margin */
+/*.center{height:500px;margin:0 210px;background-color:darkgoldenrod;}
+.left{float:left;width:200px;height: 500px;background-color: #007aff;}
+.right{float:right;width:200px;height: 500px;background-color: #007aff;}*/
+
+
+/* 4.inline-block + margin + calc
+问题:  行内块元素空格符号以及换行符的影响而产生默认的间距
+       行内块元素对齐的方式 - 基线对齐
+*/
+.main{font-size: 0}
+.left{display: inline-block;width:200px;height: 500px;background-color: #007aff}
+.center{display: inline-block;vertical-align:top;width:calc(100% - 420px);margin:0 10px;height:500px;background-color:darkgoldenrod}
+.right{display: inline-block;width:200px;height: 500px;background-color: #007aff}
+
+
+.main{font-size: 0}
+.left{position:relative;display: inline-block;width:200px;height: 500px;background-color: #007aff;border-right:10px solid #fff;box-sizing: border-box}
+.center{display: inline-block;vertical-align:top;width:100%;margin:0 -200px;height:500px;background-color:darkgoldenrod;padding:0 210px;box-sizing: border-box;font-size: 14px;}
+.right{display: inline-block;width:200px;height: 500px;background-color: #007aff;border-left:10px solid #fff;box-sizing: border-box}
+

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        html{font-size:100px;} /* 1rem = 100px 大于12 方便计算*/
+        .box {
+            width: 3rem;
+            height: 3rem;
+            background-color: #007aff
+        }
+        .box1{
+            width:2rem;
+            height: 2rem;
+            background: #000;
+        }
+    </style>
+</head>
+<body>
+<!--单位: px   %    em
+rem: font size of root element (根元素  html)
+=> 参照单位，参照根元素html的字体大小 默认值为16px
+html{font-size:16px}   计算公式 1rem = 16px
+-->
+
+<div class="box"></div>
+<div class="box1"></div>
+<script type="text/javascript">
+    /* 随着窗口的缩放 自动刷新根元素的rem的字体大小*/
+    function refreshRem() {
+        var desW = 750,
+            winW = document.documentElement.clientWidth,
+            ratio = winW / desW;
+        document.documentElement.style.fontSize = ratio * 100 + 'px';
+    }
+    refreshRem();
+    window.addEventListener('resize', refreshRem);
+</script>
+</body>
+</html>

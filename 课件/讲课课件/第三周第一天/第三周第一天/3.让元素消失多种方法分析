@@ -1,0 +1,24 @@
+CSS重点知识点
+定位  +    布局  +    盒子模型  +     背景  +  颜色字体 +   动画变换
+position   display     width height  背景颜色  font-size    animation
+z-index    float       padding                  opacity     tranisiton
+top        clear       border                               transform
+bottom     visibility  margin
+left       overflow
+right      overflow-x
+           overflow-y
+
+
+
+让元素div消失在视野中，发挥你的想象力
+1.position:absolute/relative/fixed  +  方位 top/bottom/left/right: -9999px
+2.display:none
+3.visibility:hidden
+4.width:0 + overflow:hidden
+  height:0 +  overflow:hidden
+5.margin-top/bottom/left/right:-9999px;
+6.background-color:transparent
+7.opacity:0
+8.transform: translateX(-9999px)/translateY(-9999px)/translate(-9999px,-9999px)
+9.transform: scale(0)
+
