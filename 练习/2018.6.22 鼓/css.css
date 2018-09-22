@@ -1,0 +1,20 @@
+*{margin: 0;padding: 0;}
+html,body{
+    margin-top: 100px;
+    margin-right:auto;
+    margin-left:auto;
+    width: 140px;height: 100px;}
+/*div{*/
+    /*margin-right: auto;margin-left: auto;*/
+/*}*/
+.music{
+    float: left;
+    width:140px;
+    height: 100px;
+    background: url("music.png") no-repeat;
+    animation: music 1s steps(15) infinite;
+}
+@keyframes music {
+    0%{background-position: 0 0}
+    100%{background-position: -2100px 0}
+}
