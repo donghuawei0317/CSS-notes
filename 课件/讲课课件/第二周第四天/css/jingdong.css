@@ -1,0 +1,20 @@
+*{margin:0;padding:0;}
+em{font-style: normal}
+.jdm-toolbar{position: fixed;top:50%;margin-top:-80px;right:0;width:35px;}
+.bar{position:relative;width:35px;height:35px;margin-bottom:1px;background-color: #7a6e6e;cursor: pointer}
+/*cursor: pointer 鼠标形状:小手*/
+/* 让文字消失在浏览器窗口*/
+.tab-text{z-index:-1;position:absolute;right:-70px;display:block;width:62px;height:35px;line-height: 35px;text-align: center;font-size: 12px;color:#fff;background-color: #7a6e6e;transition: all 1s ease;}
+.tab-icn{display:block;width: 34px;height: 35px;background: url("../toolbars.png") no-repeat;margin-left:3px;}
+.tab-tip{position:absolute;top:8px;right:10px;display:block;width: 6px;height: 6px;background: url("../toolbars.png") no-repeat -150px -150px;}
+/* 鼠标移上的效果*/
+.bar:hover{background-color: #c81623}
+.bar:hover .tab-text{right:35px;background-color: #c81623}
+.bar:hover .tab-tip{display: none}
+/*小图标*/
+.tab-icn-vip{background-position:  -88px -175px}
+.tab-icn-cart{background-position:  -50px 0}
+.tab-icn-focus{background-position: -50px -50px}
+.tab-icn-msg{background-position:  -190px -150px}
+.tab-icn-jimi{background-position:  -50px -150px}
+.tab-icn-feedback{background-position:  -50px -300px}

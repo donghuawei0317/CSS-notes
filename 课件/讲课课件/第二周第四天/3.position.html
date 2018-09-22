@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>position</title>
+</head>
+<body>
+【position取值】
+1.position: fixed  固定定位 - 网页固定不动的模块
+- 会脱离文档流，不占位
+- 参照物: 当前的浏览器窗口
+- 可以设置方位（top/bottom/left/right）
+  同时top和bottom top起作用
+  同时left和right left起作用
+- 不设置宽高情况下 是内容宽高
+
+2.position: absolute 绝对定位
+ - 会脱离正常的文档流，不占位 （叠加 重叠）
+ - 参照物: 上一级具有定位特征(固定、绝对、相对定位)父元素
+           如果上一级没有加定位元素，会继续一层一层往上查找，直到找到最外层的html元素为止，最后就参照整个浏览器窗口了;
+- 可以设置方位（top/bottom/left/right）
+  同时top和bottom top起作用
+  同时left和right left起作用
+- 不设置宽高情况下 是内容宽高
+
+3.position: relative 相对定位
+- 不会脱离文档流，原本的位置会保留
+- 参照物: 参照自己原来本身的位置
+1）一般用来做参照物
+2）配合top、bottom、left、right去使用
+
+
+
+
+
+
+</body>
+</html>

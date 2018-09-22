@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box{width:100px;height:100px;
+            background-color: #cd0200;/*背景颜色*/
+        }
+        .box1{width:100px;height:100px;
+            /*背景图片: url('') */
+            background-image: url("http://img1.gtimg.com/ninja/2/2018/06/ninja152989278847759.jpg");
+            /* 背景的平铺方式: 不平铺*/
+            background-repeat:no-repeat;
+        }
+        .box2{width: 500px;height: 500px;
+            /*background-color: #0873c0;
+            background-image: url("http://mat1.gtimg.com/www/qq2018/imgs/qq_logo_2018x2.png");
+            background-repeat: no-repeat;
+            background-position: center center;*/
+
+            /*复合属性: 简写*/
+            background: #0873c0 url("http://mat1.gtimg.com/www/qq2018/imgs/qq_logo_2018x2.png") no-repeat center center;
+            background-size: 300px 300px; /*CSS3新增的属性*/
+        }
+    </style>
+</head>
+<body>
+
+<div class="box"></div>
+<div class="box1"></div>
+<div class="box2"></div>
+
+
+<ul>
+    <li>
+        <a href="#">
+            <img src="" alt="">
+        </a>
+    </li>
+</ul>
+</body>
+</html>

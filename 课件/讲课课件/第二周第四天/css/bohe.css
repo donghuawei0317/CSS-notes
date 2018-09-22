@@ -1,0 +1,23 @@
+/*PS的简单操作:
+1.ctrl +/-    alt + 鼠标滚轮  都可以实现设计稿的缩放
+2.空格键 + 鼠标(小手) 可以随意拖到设计稿
+3.选区工具(虚线框)
+=> 窗口  = 信息 = 可以看所有虚线框的尺寸
+*/
+*{margin:0;padding:0;}
+a{text-decoration: none}
+.fl{float: left}
+.fr{float: right}
+.bohe-live{width:400px;}
+.bohe-img{position:relative;width: 184px;height: 184px;}
+.pic img{width: 184px;height: 184px;transition: all 1s ease}
+.bohe-img p{position: absolute;left:10px;bottom:6px;color:#fff;font-size: 14px;}
+.bohe-img .bg{position:absolute;left:0;bottom:0;width:100%;height: 70px;background-image: linear-gradient(transparent,#000)}
+.bohe-img .live{position:absolute;top:0;right:0;display:block;width:28px;height: 11px;background: url("http://static.ws.126.net/f2e/www/index20170701/images/sprite_img1109.png") no-repeat -47px -390px}
+
+/*限制图片放大超出的效果*/
+.pic{width:184px;height: 184px;overflow: hidden;}
+/*鼠标移到整个块上图片方法*/
+.bohe-img a:hover img{
+    transform: scale(2);
+}

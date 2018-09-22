@@ -1,0 +1,35 @@
+/*html{width: 100%;height: 100%}
+body{width: 100%;height: 100%}
+背景图片必须要有宽度和高度去撑开
+*/
+*{margin:0;padding:0;}
+html,body{width: 100%;height: 100%}
+.swiper-container{width: 100%;height: 100%}
+.pic{width: 100%;height: 100%;
+    background-repeat: no-repeat; /*背景平铺方式: 不平铺*/
+    background-position:top center;/*背景的位置: 居中*/
+    background-size: cover; /*背景尺寸: 覆盖  充满*/
+}
+.hero-promos{margin-left:-2px;overflow: hidden}
+.hero01,.hero02,.hero03,.hero04{
+    float: left;
+    width: 25%;
+    height: 260px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-left:2px solid #fff; /*左边框线: 宽度  类型  颜色*/
+    box-sizing: border-box; /*border和padding值已经算到宽度中了，元素宽度 = width*/
+}
+.hero01{
+    background-image: url("https://mobike.com/cn/assets/themes/moby/img/promo-01.jpg");
+}
+.hero02{
+    background-image: url("https://mobike.com/cn/assets/themes/moby/img/promo-02.jpg");
+}
+.hero03{
+    background-image: url("https://mobike.com/cn/assets/themes/moby/img/promo-03.jpg");
+}
+.hero04{
+    background-image: url("https://mobike.com/cn/assets/themes/moby/img/promo-04.jpg");
+}
