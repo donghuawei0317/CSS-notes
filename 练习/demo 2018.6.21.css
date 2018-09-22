@@ -1,0 +1,21 @@
+/*清除标签默认的样式*/
+*{margin: 0;padding: 0;font: 12px SimSun,"Arial Narrow",HELVETICA;}/*清除默认间距*/
+a{text-decoration: none}/*去除a的下划线*/
+li{list-style: none}/*去除li前的黑点*/
+
+.areaContent{width: 330px;margin: 50px auto}
+
+.hd{height: 32px;line-height:32px;font-size: 12px;border-top: 1px solid #c8dcf2}
+.hd h3{font-weight: normal}
+.hd h3 a{color: #0873c0}
+
+.picArea{overflow: hidden;margin-top: 12px;margin-bottom: 17px}
+.pic{float: left; width: 145px;}
+.pic img{display:block;width: 145px;height: 80px;}
+.pic p{font-size: 12px;height: 18px;line-height: 18px;text-align: center;margin-top: 5px}
+.pic p a{color: #172c45}
+.fl{float: left;}
+.fr{float: right;}
+
+.areaContent ul li{font-size: 14px;color: #74808f;height: 28px;line-height: 28px;white-space: nowrap;overflow: hidden;text-overflow: ellipsis}
+.areaContent ul li a{color: #172c45;}
