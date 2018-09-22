@@ -1,0 +1,160 @@
+<!DOCTYPE html><html><head><title>珠峰培训从入门到精通第四天</title><meta charset='utf-8'><link href='https://dn-maxiang.qbox.me/res-min/themes/marxico.css' rel='stylesheet'><style></style></head><body><div id='preview-contents' class='note-content'>
+                        
+                    
+
+<div><div class="toc"><div class="toc">
+<ul>
+<li><ul>
+<li><ul>
+<li><a href="#珠峰培训从入门到精通第四天">珠峰培训从入门到精通第四天</a><ul>
+<li><a href="#1路径的分类">1.路径的分类</a></li>
+<li><a href="#2html元素以及html元素的分类">2.HTML元素以及HTML元素的分类</a></li>
+<li><a href="#3display的取值及含义">3.display的取值及含义</a></li>
+<li><a href="#4background-背景类八大属性">4.background 背景类八大属性</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+
+<h3 id="珠峰培训从入门到精通第四天">珠峰培训从入门到精通第四天</h3>
+
+<h4 id="1路径的分类">1.路径的分类</h4>
+
+<blockquote>
+  <p><strong>绝对路径</strong> <br>
+  指带域名的文件的完整路径和磁盘中指定文件的全部路径 <br>
+  网址(网站的尾部)–a标签用的比较多</p>
+</blockquote>
+
+<pre class="prettyprint hljs-dark"><code class="hljs stylus"><div class="hljs-line">&lt;<span class="hljs-selector-tag">img</span> src=<span class="hljs-string">"D:/2017/10.第十期/4.第四天/1.JPEG"</span> alt=<span class="hljs-string">""</span>&gt;
+</div><div class="hljs-line">&lt;<span class="hljs-selector-tag">a</span> href=<span class="hljs-string">"http://www.zhufeng peixun.cn"</span>&gt;aaaa&lt;/a&gt;
+</div></code></pre>
+
+<blockquote>
+  <p><strong>相对路径</strong> <br>
+  是指在同一个文件夹下，通过一个参考点来找到其他文件 <br>
+  1.返回上一级 ../ <br>
+  2.同级之间直接写文件名 <br>
+  3.下一级用 /</p>
+</blockquote>
+
+<h4 id="2html元素以及html元素的分类">2.HTML元素以及HTML元素的分类</h4>
+
+<blockquote>
+  <p>html标签又叫做html元素，它分为块级元素和内联元素（也可以叫做行内元素），都是html规范中的概念</p>
+</blockquote>
+
+<p><strong>块级元素</strong></p>
+
+<blockquote>
+  <p>含义：块级元素是指本身属性为display:block;的元素。因为它自身的特点，我们通常使用块级元素来进行大布局（大结构）的搭建</p>
+  
+  <ul><li>独占一行，每一个块级元素都会从新的一行重新开始，从上到下排布</li>
+  <li>可以直接控制宽度、高度以及盒子模型的相关css属性(width/height/border/margin/padding)</li>
+  <li>在不设置宽度的情况下，块级元素的宽度是它父级元素内容的宽度</li>
+  <li>在不设置高度的情况下，块级元素的高度是它本身内容的高度</li>
+  <li>可以嵌套其他元素</li>
+  <li>ul li、ol li 、dl dt dd 成组出现，p标签不能嵌套它自己本身</li>
+  </ul>
+</blockquote>
+
+<table><tbody><tr style="font-weight:bold">  <td>标签</td>  <td align="center">作用</td></tr><tr>  <td>div</td>  <td align="center">常用块级容器，也是css layout的主要标签</td></tr><tr>  <td>h1</td>  <td align="center">大标题</td></tr><tr>  <td>h2</td>  <td align="center">副标题</td></tr><tr>  <td>h3</td>  <td align="center">三级标题</td></tr><tr>  <td>h4</td>  <td align="center">四级标题</td></tr><tr>  <td>h5</td>  <td align="center">五级标题</td></tr><tr>  <td>h6</td>  <td align="center">六级标题</td></tr><tr>  <td>hr</td>  <td align="center">水平分隔线</td></tr><tr>  <td>menu</td>  <td align="center">菜单列表</td></tr><tr>  <td>ol</td>  <td align="center">有序列表</td></tr><tr>  <td>ul</td>  <td align="center">无序列表</td></tr><tr>  <td>li</td>  <td align="center">列表项</td></tr><tr>  <td>dl</td>  <td align="center">定义列表</td></tr><tr>  <td>dt</td>  <td align="center">定义标题</td></tr><tr>  <td>dd</td>  <td align="center">定义描述</td></tr><tr>  <td>table</td>  <td align="center">表格</td></tr><tr>  <td>p</td>  <td align="center">段落</td></tr><tr>  <td>form</td>  <td align="center">交互表单</td></tr></tbody></table>
+
+<p><strong>行内元素</strong></p>
+
+<blockquote>
+  <p>行内(内联)元素是指本身属性为display:inline;的元素。因为它自身的特点，我们通常使用块级元素来进行文字、小图标（小结构）的搭建.</p>
+  
+  <ul><li>和其他内联元素从左到右在一行显示,从左到右，达到父级元素的最大宽度时，会自动折行</li>
+  <li>不能直接控制宽度、高度以及盒子模型的相关css属性，但是直接设置内外边距的左右值是可以的</li>
+  <li>内联元素的宽高是由本身内容的大小决定（文字、图片等）</li>
+  <li>内联元素只能容纳文本或者其他内联元素（此处请注意，不要在内联元素中嵌套块级元素）</li>
+  <li>在编辑代码时，元素之间有回车或者换行的时候，元素和元素之间有间隙</li>
+  </ul>
+</blockquote>
+
+<table><tbody><tr style="font-weight:bold">  <td>标签</td>  <td align="center">作用</td></tr><tr>  <td>span</td>  <td align="center">常用内联容器，定义文本内区块</td></tr><tr>  <td>a</td>  <td align="center">锚点</td></tr><tr>  <td>b</td>  <td align="center">加粗</td></tr><tr>  <td>strong</td>  <td align="center">加粗强调</td></tr><tr>  <td>i</td>  <td align="center">斜体</td></tr><tr>  <td>em</td>  <td align="center">斜体强调</td></tr><tr>  <td>s</td>  <td align="center">中划线（不推荐使用）</td></tr><tr>  <td>strike</td>  <td align="center">中划线</td></tr><tr>  <td>del</td>  <td align="center">文档中已被删除的文本</td></tr><tr>  <td>br</td>  <td align="center">强制换行</td></tr><tr>  <td>u</td>  <td align="center">下划线</td></tr><tr>  <td>textarea</td>  <td align="center">多行文本输入框</td></tr><tr>  <td>input</td>  <td align="center">输入框</td></tr><tr>  <td>select</td>  <td align="center">下拉列表</td></tr><tr>  <td>label</td>  <td align="center">input 元素定义标注（标记）</td></tr><tr>  <td>img</td>  <td align="center">插入图片</td></tr><tr>  <td>sub</td>  <td align="center">下标</td></tr><tr>  <td>sup</td>  <td align="center">上标</td></tr><tr>  <td>big</td>  <td align="center">大字体文本</td></tr><tr>  <td>small</td>  <td align="center">小字体文本</td></tr></tbody></table>
+
+<p><strong>行内块级元素</strong></p>
+
+<blockquote>
+  <ul><li>在一行排布，从左到右，达到父级元素的最大宽度时，会自动折行</li>
+  <li>设置盒子模的CSS属性</li>
+  <li>默认不设置宽度和高度的时候，宽高都是由本身内容决定的</li>
+  <li>在编辑代码时，元素之间有回车或者换行的时候，元素和元素之间有间隙</li>
+  </ul>
+</blockquote>
+
+<table><tbody><tr style="font-weight:bold">  <td>标签</td>  <td align="center">作用</td></tr><tr>  <td>textarea</td>  <td align="center">文本域</td></tr><tr>  <td>input</td>  <td align="center">输入框</td></tr><tr>  <td>img</td>  <td align="center">图片</td></tr></tbody></table>
+
+<h4 id="3display的取值及含义">3.display的取值及含义</h4>
+
+<blockquote>
+  <p>设置或检索对象是否及如何显示</p>
+  
+  <ul><li>none：隐藏对象。与visibility属性的hidden值不同，其不为被隐藏的对象保留其物理空间</li>
+  <li>inline：指定对象为内联元素。</li>
+  <li>block： 指定对象为块元素。</li>
+  <li>inline-block： 指定对象为内联块元素。（CSS2）</li>
+  </ul>
+</blockquote>
+
+<h4 id="4background-背景类八大属性">4.background 背景类八大属性</h4>
+
+<ul><li><strong>background-color:</strong> 背景颜色（当同时定义了背景颜色和背景图像时，背景图像覆盖在背景颜色之上）</li>
+<li><strong>background-image：</strong>背景图像</li>
+<li><strong>background-repeat：</strong>背景图像如何铺排填充 <br>
+<ul>
+<li>repeat-x： 背景图像在横向上平铺</li>
+<li>repeat-y： 背景图像在纵向上平铺</li>
+<li>repeat： 背景图像在横向和纵向平铺</li>
+<li>no-repeat： 背景图像不平铺</li></ul></li>
+<li><strong>background-attachment :</strong>设置或检索背景图像是随对象内容滚动还是固定的 <br>
+<ul>
+<li>fixed： 背景图像相对于窗体固定。 <br>
+scroll： 背景图像相对于元素固定，也就是说当元素内容滚动时背景图像不会跟着滚动，因为背景图像总是要跟着元素本身。但会随元素的祖先元素或窗体一起滚动。</li></ul></li>
+<li><strong>background-position:</strong>设置或检索对象的背景图像位置 <br>
+<ul>
+<li><code>&lt;percentage&gt;</code>： 用百分比指定背景图像填充的位置。可以为负值。</li>
+<li><code>&lt;length&gt;</code>： 用长度值指定背景图像填充的位置。可以为负值。</li>
+<li>center： 背景图像横向和纵向居中。</li>
+<li>left： 背景图像在横向上填充从左边开始。</li>
+<li>right： 背景图像在横向上填充从右边开始。</li>
+<li>top： 背景图像在纵向上填充从顶部开始。</li>
+<li>bottom： 背景图像在纵向上填充从底部开始。</li>
+<li><code>如果提供四个</code>，每个或偏移前都必须跟着一个关键字（即left | center | right | top | bottom），偏移量相对关键字位置进行偏移。 <br>
+<code>示例：假设要定义背景图像在容器中右下方，并且距离右边和底部各有20px</code> <br>
+<code>缩写方式： background:url(test1.jpg) no-repeat right 20px bottom 20px;</code></li>
+<li><code>如果提供三个：</code> 拆分方式： background:url(test1.jpg) no-repeat left bottom 10px; <br>
+要注意的是：设置3个或4个值，偏移量前必须有关键字。也就是说，形如：”10px bottom 20px” ，这样的参数设置是错误的，因为10px前面没有关键字。</li>
+<li><code>如果提供两个</code>，第一个用于横坐标，第二个用于纵坐标。</li>
+<li><code>如果只提供一个</code>，该值将用于横坐标；纵坐标将默认为50%（即center）</li></ul></li>
+<li><strong>background-origin:</strong>设置或检索对象的背景图像计算 &lt;’ background-position ‘&gt; 时的参考原点(位置) <br>
+<ul>
+<li>padding-box： 从padding区域（含padding）开始显示背景图像。</li>
+<li>border-box： 从border区域（含border）开始显示背景图像。</li>
+<li>content-box： 从content区域开始显示背景图像。</li></ul></li>
+<li><strong>background-clip</strong>：指定对象的背景图像向外裁剪的区域 <br>
+<ul>
+<li>padding-box： 从padding区域（不含padding）开始向外裁剪背景。</li>
+<li>border-box： 从border区域（不含border）开始向外裁剪背景。</li>
+<li>content-box： 从content区域开始向外裁剪背景。</li>
+<li>text： 从前景内容的形状（比如文字）作为裁剪区域向外裁剪，如此即可实现使用背景作为填充色之类的遮罩效果</li></ul></li>
+<li><strong>background-size：</strong> 检索或设置对象的背景图像的尺寸大小 <br>
+<ul>
+<li><code>&lt;length&gt;</code>： 用长度值指定背景图像大小。不允许负值。</li>
+<li><code>&lt;percentage&gt;</code>： 用百分比指定背景图像大小。不允许负值。</li>
+<li>auto： 背景图像的真实大小。</li>
+<li>cover： 将背景图像等比缩放到完全覆盖容器，背景图像有可能超出容器。</li>
+<li>contain： 将背景图像等比缩放到宽度或高度与容器的宽度或高度相等，背景图像始终被包含在容器内。</li>
+<li>如果提供两个，第一个用于定义背景图像的宽度，第二个用于定义背景图像的高度。</li>
+<li>如果只提供一个，该值将用于定义背景图像的宽度，第2个值默认为auto，即高度为auto，此时背景图以提供的宽度作为参照来进行等比缩放</li></ul></li>
+</ul></div></body></html>
