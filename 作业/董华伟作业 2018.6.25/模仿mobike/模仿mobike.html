@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description"/>
+    <title>董华伟</title>
+    <link rel="icon" href="">
+    <link rel="stylesheet" href="swiper/swiper.min.css">
+    <link rel="stylesheet" href="css.css">
+</head>
+<body>
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">
+            <div class="bears" style="background-image: url('images/bears1.gif')"></div>
+        </div>
+        <div class="swiper-slide">
+            <div class="bears" style="background-image: url('images/bears2.gif')"></div>
+        </div>
+        <div class="swiper-slide">
+            <div class="bears" style="background-image: url('images/bears3.gif')"></div>
+        </div>
+        <div class="swiper-slide">
+            <div class="bears" style="background-image: url('images/bears4.gif')"></div>
+        </div>
+        <div class="swiper-slide">
+            <div class="bears" style="background-image: url('images/bears5.gif')"></div>
+        </div>
+    </div>
+    <!-- 如果需要分页器 -->
+    <div class="swiper-pagination"></div>
+
+    <!-- 如果需要导航按钮 -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+
+    <!-- 如果需要滚动条 -->
+    <div class="swiper-scrollbar"></div>
+</div>
+
+<div class="pic">
+    <div class="bear" style="background-image: url('images/bears6.gif')"></div>
+    <div class="bear" style="background-image: url('images/bears7.gif')"></div>
+    <div class="bear" style="background-image: url('images/bears8.gif')"></div>
+    <div class="bear" style="background-image: url('images/bears9.gif')"></div>
+</div>
+
+<script type="text/javascript" src="swiper/swiper.min.js"></script>
+<script>
+    var mySwiper = new Swiper ('.swiper-container', {
+//        direction: 'vertical',
+        loop: true,
+        autoplay:true,
+
+        // 如果需要分页器
+        pagination: {
+            el: '.swiper-pagination'
+        },
+
+        // 如果需要前进后退按钮
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev'
+        },
+
+        // 如果需要滚动条
+        scrollbar: {
+            el: '.swiper-scrollbar'
+        }
+    })
+</script>
+</body>
+</html>
