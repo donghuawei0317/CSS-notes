@@ -1,0 +1,45 @@
+
+/*背景颜色 background-color/ background
+背景图片   background-image/ background
+背景平铺方式 background-repeat
+背景显示位置 background-position: x轴 y轴; 默认值0 0
+
+合并写法:
+background:颜色  图片路径  平铺方式   位置;
+*/
+.box1{width: 200px;height:200px;
+    background: #0873c0;
+}
+.box2{
+    width: 400px;height:200px;
+    /*background-color: aqua;
+    background-image: url("https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=1804211008,4177665770&fm=173&app=25&f=JPEG?w=218&h=146&s=1BA34884480BBE5D36EA5C8503009088");
+   background-repeat: no-repeat;*/
+
+    background:aqua url("https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=1804211008,4177665770&fm=173&app=25&f=JPEG?w=218&h=146&s=1BA34884480BBE5D36EA5C8503009088") no-repeat;
+}
+.box3{
+    width: 241px;
+    height: 187px;
+    background: url("../images/2.jpg") no-repeat;
+    animation: girl 1s steps(6) infinite;
+}
+@keyframes girl{
+    0%{background-position: 0 0}
+    100%{background-position: -1446px 0}
+}
+
+
+.box4{
+    width: 94px;height:258px;
+    background: url("../images/11.jpg") no-repeat;
+    animation:box4  1s  steps(5) infinite,box4-2 10s ease;
+}
+@keyframes box4{
+    0%{background-position: 0 0}
+    100%{background-position: -470px 0}
+}
+@keyframes box4-2 {
+    0%{transform: translateX(0)}
+    100%{transform:translateX(500px)}
+}

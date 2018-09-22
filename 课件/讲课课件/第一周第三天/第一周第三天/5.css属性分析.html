@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="" name="Keywords">
+    <meta content="" name="description"/>
+    <title></title>
+    <link rel="icon" href="">
+</head>
+<body>
+
+【CSS选择器】
+*   通配符选择器   *{margin:0;padding:0}
+标签选择器: 通过标签名找到元素
+类选择器/class选择器: html 结构中(开始标签中)class = "box box1"
+                     CSS 对应的是一个小黑点 .box{} .box1{}
+
+id选择器: html 结构中(开始标签中)id = "box"
+          CSS 对应的是一个#   #box{}
+后代选择器: div ul li img {}
+
+【CSS单词的梳理】
+margin:0; margin:50px auto;   外边距
+padding:0;  内边距
+font-family:SimSun,"Arial Narrow",HELVETICA; 字体类型 使用什么字体
+text-decoration: none  文本装饰:没有
+text-decoration: underline 下划线
+text-decoration: overline 上划线
+text-decoration: line-through 中划线
+list-style: none  列表样式:没有
+width: 330px; 宽度
+height:32px;  高度
+line-height:32px;  控制文字上下间距
+letter-spacing 控制文字的左右间距
+font-size:12px; 字体大小
+font-weight: bold / normal; 文字加粗 / 正常
+color 字体颜色
+border-top/bottom/left/right 边框线
+边框线宽度 + 边框线的类型（solid实线） + 边框线的颜色 (三者之间用空格隔开)
+
+
+【项目中实用技巧】
+文字 -> font -
+文本 -> text -
+列表 -> list -
+
+div 水平居中: width +  margin:auto;
+文字居中:
+1.垂直居中  height + line-height 同值
+2.水平居中  text-align:center
+
+文字相关样式:
+大小 - 粗细  - 类型 - 颜色(a) - 间距(line-height/margin/padding) - 边框线
+
+【省略号必备的四个条件】
+width 宽度
+white-space:nowrap 强制不折行
+overflow:hidden 溢出隐藏
+text-overflow:ellipsis 隐藏的方式: 省略号
+
+【overflow:hidden】
+1.清除浮动
+2.溢出隐藏(超出的部分隐藏)
+
+【display:block】
+清除img默认的小间距(4px)
+
+【text-align 文字的对齐方式】
+left   居左边显示
+center 居中间显示
+right  居右显示
+
+【float 浮动 -> 上下结构 变成 左右结构】
+left  靠左边显示
+right 靠右边显示
+none  默认
+
+
+<div class="box"></div>
+<h2 class="box"></h2>
+
+<div id="box"></div>
+<h2 id="box1"></h2>
+
+
+<div class="main">
+    <ul>
+        <li>
+            <span>
+                <a href="#">
+                    <img src="" alt="">
+                </a>
+            </span>
+        </li>
+    </ul>
+</div>
+
+</body>
+</html>
