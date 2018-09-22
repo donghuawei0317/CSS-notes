@@ -1,0 +1,20 @@
+*{margin: 0;padding: 0;}
+html,body{
+    width: 100%;
+    height: 100%;
+}
+.pic{
+    margin: 80px auto 0 auto;
+    width: 400px;
+    height: 486px;
+    background: url("images/man.png") no-repeat;
+    animation: man 1s steps(16) infinite;
+}
+@keyframes man {
+     0%{background-position: 0 0}
+     100%{background-position:-6608px 0 }
+ }
+@-webkit-keyframes man {
+    0%{background-position: 0 0}
+    100%{background-position:-6608px 0 }
+}
