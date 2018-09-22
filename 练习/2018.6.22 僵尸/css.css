@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+}
+.img{
+    /*padding-top: 200px;*/
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    background-image: url("xiyou05.png");
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+}
+.pic{
+    padding-top: 200px;
+    margin-right: auto;
+    margin-left: auto;
+    width: 200px;
+    height: 312px;
+}
+.walkingdead{
+    float: left;
+    width: 200px;
+    height: 312px;
+    background: url("walkingdead.png") no-repeat;
+    animation: walkingdead 1s steps(10) infinite,walkingdead-2 10s ease infinite;
+}
+@keyframes walkingdead {
+    0%{background-position: 0 0}
+    100%{background-position: -2000px 0}
+}
+@keyframes walkingdead-2 {
+    0%{transform: translateX(500px)}
+    100%{transform: translateX(-800px)}
+}
